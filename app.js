@@ -21,7 +21,7 @@ server.listen(port, function () {
 
 var clientCount = 0;
 
-var global = io.of("/global");
+var global = io.of("/");
 
 global.on("connection", function(client) {
 

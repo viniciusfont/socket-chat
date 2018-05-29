@@ -23,7 +23,7 @@ export default class Chat {
     this.TYPING_TIME = 400;
 
     // connect Socket.io to global namespace
-    this.socket = io("/global");
+    this.socket = io("/");
 
     // Emit join client event
     this.socket.emit('join', this.username);
@@ -164,7 +164,7 @@ export default class Chat {
       let content = `
         <img class="message-avatar rounded-circle" src="http://via.placeholder.com/48/`+((me) ? '9200CE' : '0092CE')+`/fff.png?text=`+name.toUpperCase().substring(0,1)+`" alt="">
         <div class="message">
-          <a class="message-author" href="#">` + name + `</a><small> ` + location.city + ` &#8226; ` + location.neighborhood + `</small>
+          <a class="message-author" href="#">` + name + `</a><small>
           <span class="message-date">` + time.toLocaleTimeString() + `</span>
           <span class="message-content">
           ` + message + `&#128542;

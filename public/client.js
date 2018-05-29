@@ -2,9 +2,10 @@
 
 import Chat from './chat.js';
 
-class Chat {
+class Client {
 
   constructor() {
+    console.log("Socket chat Client start")
     this.client = {
       id: undefined,
       username: undefined,
@@ -32,11 +33,11 @@ class Chat {
     this.chat = new Chat(this.client.username);
 
     document.getElementById('name-container').style.display = 'none';
-    document.getElementById('chat-container').style.display = 'block';
+    document.getElementById('chat-container').style.display = 'flex';
   }
 }
 
 // Start Chat main class after window finish load
 window.onload = () => {
-  new Chat();
+  new Client();
 };
